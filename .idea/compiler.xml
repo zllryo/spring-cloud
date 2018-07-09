@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="cloud-consumer" />
         <module name="cloud-producer" />
+        <module name="cloud-producer2" />
         <module name="cloud-ribbon" />
         <module name="clouddemo" />
       </profile>
@@ -15,6 +16,7 @@
     <bytecodeTargetLevel>
       <module name="cloud-consumer" target="1.8" />
       <module name="cloud-producer" target="1.8" />
+      <module name="cloud-producer2" target="1.8" />
       <module name="cloud-ribbon" target="1.8" />
       <module name="clouddemo" target="1.8" />
     </bytecodeTargetLevel>

@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/cloud-producer/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-ribbon/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-producer2/pom.xml" />
       </list>
     </option>
   </component>
