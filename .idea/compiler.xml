@@ -11,6 +11,7 @@
         <module name="cloud-producer2" />
         <module name="cloud-ribbon" />
         <module name="clouddemo" />
+        <module name="config-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,6 +20,7 @@
       <module name="cloud-producer2" target="1.8" />
       <module name="cloud-ribbon" target="1.8" />
       <module name="clouddemo" target="1.8" />
+      <module name="config-server" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
