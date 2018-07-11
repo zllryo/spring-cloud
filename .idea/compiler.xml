@@ -6,20 +6,24 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="api-geteway" />
         <module name="cloud-consumer" />
         <module name="cloud-producer" />
         <module name="cloud-producer2" />
         <module name="cloud-ribbon" />
         <module name="clouddemo" />
+        <module name="config-client" />
         <module name="config-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="api-geteway" target="1.8" />
       <module name="cloud-consumer" target="1.8" />
       <module name="cloud-producer" target="1.8" />
       <module name="cloud-producer2" target="1.8" />
       <module name="cloud-ribbon" target="1.8" />
       <module name="clouddemo" target="1.8" />
+      <module name="config-client" target="1.8" />
       <module name="config-server" target="1.8" />
     </bytecodeTargetLevel>
   </component>

@@ -12,4 +12,10 @@ public class HelloController {
     {
         return name+"hello2";
     }
+
+    @RequestMapping("/hi")
+    public String Hi(@RequestParam(value = "name") String name)
+    {
+        return  name+"hi2";
+    }
 }

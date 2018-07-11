@@ -16,6 +16,14 @@ public class ComputeService {
        return  restTemplate.getForEntity("http://spring-cloud-producer/hello?name="+name, String.class).getBody();
     }
 
+
+    @HystrixCommand(fallbackMethod="ServiceFallback")
+    public String hi(String name)
+    {
+        return  restTemplate.getForEntity("http://spring-cloud-producer/hi?name="+name, String.class).getBody();
+    }
+
+
     /*
     *
     * 参数要与原方法一致

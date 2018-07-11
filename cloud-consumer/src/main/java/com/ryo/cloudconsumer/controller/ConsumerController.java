@@ -18,6 +18,13 @@ public class ConsumerController {
         return  helloRemote.hello(name);
     }
 
+
+    @RequestMapping("/hi/{name}")
+    public String hi(@PathVariable(value = "name")String name)
+    {
+        return  helloRemote.hi(name);
+    }
+
     @ResponseBody
     @RequestMapping("/")
     public String he()

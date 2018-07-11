@@ -25,4 +25,11 @@ public class ConsumerController {
         return computeService.hello(name);
         //return restTemplate.getForEntity("http://spring-cloud-producer/hello?name="+name, String.class).getBody();
     }
+
+    @RequestMapping(value = "/hi/{name}" )
+    public String hi(@PathVariable(value = "name")String name) {
+        this.loadBalancerClient.choose("spring-cloud-producer");//随机访问策略
+        return computeService.hi(name);
+
+    }
 }

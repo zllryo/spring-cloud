@@ -12,6 +12,8 @@
         <option value="$PROJECT_DIR$/cloud-ribbon/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-producer2/pom.xml" />
         <option value="$PROJECT_DIR$/config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/config-client/pom.xml" />
+        <option value="$PROJECT_DIR$/api-geteway/pom.xml" />
       </list>
     </option>
   </component>
