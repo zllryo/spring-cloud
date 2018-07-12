@@ -53,20 +53,20 @@ public class AccessZuulFilter extends ZuulFilter {
         String token=request.getParameter("token");
         logger.info("token:"+token);
         System.out.println(token);
-        if(StringUtils.isNotBlank(token))
+        //if(StringUtils.isNotBlank(token))
         {
             requestContext.setSendZuulResponse(true); //对请求进行路由
             requestContext.setResponseStatusCode(200);
             requestContext.set("isSuccess", true);
             return null;
         }
-        else
+       /* else
         {
             requestContext.setSendZuulResponse(false); //不对其进行路由
             requestContext.setResponseStatusCode(400);
             requestContext.setResponseBody("token is empty");
             requestContext.set("isSuccess", false);
             return null;
-        }
+        }*/
     }
 }
