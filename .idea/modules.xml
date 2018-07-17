@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/api-geteway/api-geteway.iml" filepath="$PROJECT_DIR$/api-geteway/api-geteway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/auth-service/auth-service.iml" filepath="$PROJECT_DIR$/auth-service/auth-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-common/cloud-common.iml" filepath="$PROJECT_DIR$/cloud-common/cloud-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-consumer/cloud-consumer.iml" filepath="$PROJECT_DIR$/cloud-consumer/cloud-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-producer/cloud-producer.iml" filepath="$PROJECT_DIR$/cloud-producer/cloud-producer.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-producer2/cloud-producer2.iml" filepath="$PROJECT_DIR$/cloud-producer2/cloud-producer2.iml" />

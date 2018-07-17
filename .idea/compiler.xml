@@ -7,6 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="api-geteway" />
+        <module name="auth-service" />
+        <module name="cloud-common" />
         <module name="cloud-consumer" />
         <module name="cloud-producer" />
         <module name="cloud-producer2" />
@@ -20,6 +22,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="api-geteway" target="1.8" />
+      <module name="auth-service" target="1.8" />
+      <module name="cloud-common" target="1.8" />
       <module name="cloud-consumer" target="1.8" />
       <module name="cloud-producer" target="1.8" />
       <module name="cloud-producer2" target="1.8" />

@@ -1,6 +1,12 @@
 ---
 spring:
   profiles: peer1
+  security:
+    basic:
+      enabled: true
+    user:
+      name: admin
+      password: 1
 server:
   port: 1000
 eureka:
@@ -12,6 +18,12 @@ eureka:
 ---
 spring:
   profiles: peer2
+  security:
+    basic:
+      enabled: true
+    user:
+      name: admin
+      password: 1
 server:
   port: 1001
 eureka:
@@ -23,6 +35,12 @@ eureka:
 ---
 spring:
   profiles: peer3
+  security:
+    basic:
+      enabled: true
+    user:
+      name: admin
+      password: 1
 server:
   port: 1002
 eureka:

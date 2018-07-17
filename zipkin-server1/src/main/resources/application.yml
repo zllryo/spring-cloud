@@ -1,9 +1,24 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:1000/eureka/
+      defaultZone: http://admin:1@localhost:1000/eureka/
 server:
   port: 6000
 spring:
   application:
     name: zipkin-server1
+  rabbitmq:
+    addresses: amqp://localhost:5672
+    username: guest
+    password: guest
+zipkin:
+  storage:
+    type: elasticsearch
+    elasticsearch:
+      hosts: http://localhost:9200
+      username: elastic
+      password: changeme
+      cluster: elasticsearch
+      index: zipkin
+      index-shards: 1
+      index-replicas: 1
