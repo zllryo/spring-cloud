@@ -3,6 +3,7 @@ package com.ryo.cloudcommon.util;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.util.Date;
+
 import com.ryo.cloudcommon.base.ResponseCode;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -11,19 +12,25 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.SignatureException;
 
 public class JWTUtils {
+    private volatile static JWTUtils JWTUtils;
     private static RSAPrivateKey priKey;
     private static RSAPublicKey pubKey;
 
-    private static class SingletonHolder {
-        private static final JWTUtils INSTANCE = new JWTUtils();
-    }
+
 
     public synchronized static JWTUtils getInstance(String modulus, String privateExponent, String publicExponent) {
         if (priKey == null && pubKey == null) {
             priKey = RSAUtils.getPrivateKey(modulus, privateExponent);
             pubKey = RSAUtils.getPublicKey(modulus, publicExponent);
         }
-        return SingletonHolder.INSTANCE;
+        if (JWTUtils == null) {
+            synchronized (JWTUtils.class) {
+                if (JWTUtils == null) {
+                    JWTUtils = new JWTUtils();
+                }
+            }
+        }
+        return JWTUtils;
     }
 
     public synchronized static void reload(String modulus, String privateExponent, String publicExponent) {
@@ -36,11 +43,19 @@ public class JWTUtils {
             priKey = RSAUtils.getPrivateKey(RSAUtils.modulus, RSAUtils.private_exponent);
             pubKey = RSAUtils.getPublicKey(RSAUtils.modulus, RSAUtils.public_exponent);
         }
-        return SingletonHolder.INSTANCE;
+        if (JWTUtils == null) {
+            synchronized (JWTUtils.class) {
+                if (JWTUtils == null) {
+                    JWTUtils = new JWTUtils();
+                }
+            }
+        }
+        return JWTUtils;
     }
 
     /**
      * 获取Token
+     *
      * @param uid 用户ID
      * @param exp 失效时间，单位分钟
      * @return
@@ -53,6 +68,7 @@ public class JWTUtils {
 
     /**
      * 获取Token
+     *
      * @param uid 用户ID
      * @return
      */
@@ -64,6 +80,7 @@ public class JWTUtils {
 
     /**
      * 检查Token是否合法
+     *
      * @param token
      * @return JWTResult
      */

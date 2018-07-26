@@ -1,26 +1,19 @@
 package com.ryo.apigeteway.filter;
-import brave.SpanCustomizer;
+
 import com.netflix.zuul.ZuulFilter;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
+import com.netflix.zuul.context.RequestContext;
 import org.springframework.stereotype.Component;
 
 @Component
-public class LoggerFilter extends ZuulFilter {
-
-    @Autowired
-    SpanCustomizer span;
-
-
-
+public class AuthHeaderFilter extends ZuulFilter {
     @Override
     public String filterType() {
-        return FilterConstants.POST_TYPE;
+        return "pre";
     }
 
     @Override
     public int filterOrder() {
-        return 90;
+        return 0;
     }
 
     @Override
@@ -30,7 +23,8 @@ public class LoggerFilter extends ZuulFilter {
 
     @Override
     public Object run()  {
-        this.span.tag("operator", "admin");
+        RequestContext  requestContext=RequestContext.getCurrentContext();
+        requestContext.addZuulRequestHeader("Authorization","");
         return null;
     }
 }

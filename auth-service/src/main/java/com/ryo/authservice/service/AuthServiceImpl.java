@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 public class AuthServiceImpl implements AuthService {
     @Override
     public User auth(AuthKey authKey) {
+
         return new User(1L);
     }
 }
